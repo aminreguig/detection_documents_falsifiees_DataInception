@@ -3,9 +3,10 @@ import streamlit as st
 import cv2
 from PIL import Image, ImageOps
 import numpy as np
+import pandas as pd
 
 model_1 = tf.keras.models.load_model("C:\stage_data_inception\code\my_model_0-51.hdf5")
-model_2 = tf.keras.models.load_model("C:\stage_data_inception\code\my_model_inception.hdf5")
+model_2 = tf.keras.models.load_model("C:\stage_data_inception\code\inception.hdf5")
 model_3 = tf.keras.models.load_model("C:\stage_data_inception\code\my_model_VGG1.hdf5")
 
 st.set_page_config(
@@ -55,16 +56,21 @@ if file is not None:
     if (choix_model=='model_VGG16'):
         prediction = import_and_predict(image, model_3)
     
-    if (st.sidebar.button('predicter')):
+    if (st.sidebar.button('vérifier le passeport')):
          
         if np.argmax(prediction) == 0:
             st.write("""
-            ##  faked
+            ##  c'est un passeport falsifié
              """)
         else:
             st.write("""
-            ##   real
+            ##   c'est un passeport vrai
              """)
     
-        st.text("Probabilité (0: faked, 1: real )")
-        st.write(prediction)
+        df = pd.DataFrame(prediction, columns = ['falsifié','réel'])
+        st.write(df)
+
+
+
+
+

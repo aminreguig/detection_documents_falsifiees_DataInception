@@ -3,5 +3,4 @@ tensorflow==2.5.0
 numpy==1.19.5
 pandas
 Pillow
-opencv-python==4.5.1.48
 opencv-python-headless==4.5.1.48

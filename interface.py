@@ -5,7 +5,7 @@ from PIL import Image, ImageOps
 import numpy as np
 import pandas as pd
 
-model_1 = tf.keras.models.load_model("C:\stage_data_inception\code\my_model_0-51.hdf5")
+model_1 = tf.keras.models.load_model("https:\\github.com\aminreguig\detection_documents_falsifiees_DataInceptioncode\my_model_0-51.hdf5")
 model_2 = tf.keras.models.load_model("C:\stage_data_inception\code\inception.hdf5")
 model_3 = tf.keras.models.load_model("C:\stage_data_inception\code\my_model_VGG1.hdf5")
 

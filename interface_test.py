@@ -20,8 +20,6 @@ st.write("""
          ####         Votre solution pour detecter les documents falsifiés   
          """
          )
-st.sidebar.image("C:/stage_data_inception/datainception-logo.png", use_column_width=True)
-
 choix_model=st.sidebar.selectbox('Veuillez choisir le modele à utiliser ',('modele interne','model_inception','model_VGG16'))
 
 
